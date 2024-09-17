@@ -14,22 +14,20 @@ let response;
  * @returns {Object} object - API Gateway Lambda Proxy Output Format
  * 
  */
-exports.lambdaHandler = async (event, context) => {
-    try {
-        // const ret = await axios(url);
-        response = {
-            'statusCode': 200,
-            'body': JSON.stringify({
-                message: "I'm using canary deployments",
-                // message: `hello world`,
-                // message: `Hello World -> ${event.event ?? 'No esta definido el objeto seleccionado'}`,
-                // location: ret.data.trim()
-            })
-        }
-    } catch (err) {
-        console.log(err);
-        return err;
-    }
 
-    return response
-};
+exports.lambdaHandler = async (event, context) => {
+  throw new Error("This will cause a deployment rollback")
+  // try {
+  //     response = {
+  //         "statusCode": 200,
+  //         "body": JSON.stringify({
+  //             message: "I'm using canary deployments",
+  //         })
+  //     }
+  // } catch (err) {
+  //     console.log(err);
+  //     return err;
+  // }
+
+  // return response
+}
