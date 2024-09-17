@@ -20,7 +20,8 @@ exports.lambdaHandler = async (event, context) => {
         response = {
             'statusCode': 200,
             'body': JSON.stringify({
-                message: `hello world`,
+                message: "I'm using canary deployments",
+                // message: `hello world`,
                 // message: `Hello World -> ${event.event ?? 'No esta definido el objeto seleccionado'}`,
                 // location: ret.data.trim()
             })
